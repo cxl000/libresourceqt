@@ -27,7 +27,10 @@ Resource::Resource()
         :   optional(false),
         identifier(0), granted(false)
 {
-    identifier = (quint32)this;
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-fpermissive"
+    identifier = this;
+#pragma GCC diagnostic pop
 }
 
 Resource::Resource(const Resource &other)
